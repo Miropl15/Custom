@@ -1,0 +1,114 @@
+html,body{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: lightslategrey;
+    font-size: 18px;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    position: fixed;
+
+}
+nav{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(9, 128, 202);
+}
+
+#logo img{
+    margin-left: 5%;
+    height: 100%;
+}
+#nav_link{
+    display: flex;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#nav_link a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 200px;
+    margin: 2%;
+    border-radius: 25px;
+    text-decoration: none;
+    color: black;
+    background-color: lightblue;
+    font-size: 18px;
+}
+
+#nav_link a:hover{
+    background-color: cornflowerblue;
+}
+
+#navbarspace{
+    width: 100%;
+    height: 50px;
+    background-color: lightslategrey;
+
+}
+
+h1{
+    text-align: center;
+}
+
+#glowna{
+    text-align: center;
+}
+#spis_tresci{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#lista_spis{
+    text-align: left;
+}
+#lista_spis li a{
+    text-decoration: none;
+    color: black;
+}
+
+#lista_spis li:hover a:hover{
+    color: red;
+}
+
+.wazny_tekst{
+    font-size: 20px;
+    font-style: italic;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+section{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+#abscheme{
+    width: 100%;
+    height: 50%;
+    max-width: 500px;
+
+}
+
+
+article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    width: 60%;
+    
+}
+

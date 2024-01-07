@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Rom Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header> <!-- navbar -->
+        <nav> 
+            <div id="logo">
+                <a href="#navbarspace">
+                    <img src="grafiki/logo.png" alt="logo">
+                </a>
+            </div>
+            <div id="nav_link">
+                <a href="#navbarspace">Spis treści</a>
+                <a href="listapliki.html">Do pobrania</a>
+                <a href="index.html">Strona główna</a>
+            </div>
+        </nav>
+    </header>
+    <div id="navbarspace"></div>
+
+    <main>
+        <div id="glowna"> <!-- Spis treści -->
+            <h1>Wprowadzenie</h1>
+            <hr>
+            <div id="spis_tresci">
+                <h2>Spis treści</h2>
+                <ol id="lista_spis">
+                    <li><a href="#zanim_rozpoczniesz">Zanim rozpoczniesz</a></li>
+                    <li><a href="#bootloader">Odblokowanie bootloadera</a></li>
+                    <li><a href="#recovery">Wgrywanie custom recovery</a></li>
+                    <li><a href="#instalacja">Instalacja Custom romu</a></li>
+                    <li><a href="#dodatki">Instalacja dodatków</a></li>
+                    <li><a href="#moduly">Moduły magiska/KSU</a></li>
+                    <li><a href="#problemy">Najczęstsze problemy</a></li>
+                    <li><a href="kotek.html">Słodki kotek z okolicy</a></li>
+                </ol>
+            </div>
+        </div>
+        <hr>
+        <!-- Zanim rozpoczniesz -->
+        <section id="zanim_rozpoczniesz">
+            <article>
+                <h3>Zanim rozpoczniesz</h3>
+                <p>
+                    Ten Poradnik został stworzony głównie pod urządzenia xiaomi oparte na dynamicznych partycjach wykorzystujące schemat slotów a/b. 
+                    Sloty te wykorzystywane są przez aktualizacje ota poprzez instalacje aktualizacji w nieaktywnym gnieździe. 
+                    <span class="wazny_tekst">Wszystkie urządzenia które wyszły oparte na androidzie 10 i wyżej posiadają dynamiczne partycje.</span>
+                </p> 
+            </article>
+            <img id="abscheme" src="grafiki/abscheme.jpeg" alt="abscheme">
+        </section>
+        <hr>
+        <!-- Bootloader -->
+        <section id="bootloader">
+            <article>
+                <h3>Odblokowanie bootloadera</h3>
+                <p>
+                    Aby odblokować bootloader należy dodać do urządzenia konto xiaomi.
+                    Następnie trzeba w opcjach programisty zezwolić na odblokowanie OEM oraz dodać konto do urządzenia w zakładce status odblokowania mi. 
+                    <span class="wazny_tekst">
+                        Ten poradnik jest dla systemów opartych na MIUI.    
+                        Żeby dodać konto xiaomi do statusu odblokowania mi potrzebna jest karta sim z aktywnymi danymi mobilnymi.
+                    </span>
+                </p>
+            </article>
+        </section>
+        <hr>
+
+        <!-- Recovery -->
+        <section id="recovery">
+            <article>
+                <h3>Wgrywanie custom recovery</h3>
+                <p>
+                    Aby Wgrać custom recovery w zależności od tego jak rom jest zbudowany używamy komend <span class="wazny_tekst">fastboot boot (ścieżka/recovery.img) lub fastboot flash vendor_boot (ścieżka/recovery.img). Domyślnie romy bazowane na aosp używa się pierwszej komendy.</span> Przy użyciu komendy fastboot boot (ścieżka/recovery.img) po załadowaniu się trzeba użyć opcji flash current recovery w przypadku twrp lub flashowanie pobranego pliku zip w przypadku orangeFox.
+                </p>
+            </article>
+        </section>
+        <hr>
+
+        <!-- Instalacja -->
+        <section id="instalacja">
+            <article>
+                <h3>Instalacja Custom romu</h3>
+                <ol>
+                    <li>wipe dalvik/cache</li>
+                    <li>instalacja roma z załączonym auto reflash recovery/twrp</li>
+                    <li>reboot recovery</li>
+                    <li>Instalacja dodatków takich jak gapps (opcjonalne, wymagane jeśli dodatki były zainstalowane wcześniej)</li>
+                    <li>Format Data (opcjonalne, wymagane przy zmianie roma)</li>
+                    <li>reboot system</li>
+                </ol>
+            </article>
+        </section>
+        <hr>
+
+        <!-- Dodatki -->
+        <section id="dodatki">
+            <article>
+                <h3>Instalacja dodatków</h3>
+                <ol>
+                    <li>Reboot recovery</li>
+                    <li>wipe dalvik/cache</li>
+                    <li>instalacja dodatków zip możliwych do flashowania poprzez recovery</li>
+                </ol>
+            </article>
+        </section>
+        <hr>
+
+        <!-- Moduły -->
+        <section id="moduly">
+            <article>
+                <h3>Moduły magiska/KSU</h3>
+                <p>
+                    Moduły flashujemy w aplikacji magiska/KSU. Po instalacji Robimy restart.
+                </p>
+            </article>
+        </section>
+        <hr>
+
+        <!-- Problemy -->
+        <section id="problemy">
+            <article>
+                <h3>Najczęstsze problemy</h3>
+                <p>
+                    Safetynet: Na to jest wiele sposobów. Najczęściej działającą opcją jest zainstalowanie poprzez magiska/KSU modułu <a href="https://github.com/kdrag0n/safetynet-fix/releases" target="_blank">Kdragon SafetynetFix</a>.
+                    Innym sposobem jest przy posiadaniu magiska użycie także modułu <a href="https://github.com/Magisk-Modules-Repo/MagiskHidePropsConf/releases" target="_blank">Magisk HidePropsConfig</a> (przestarzały).
+                </p>
+                <p>
+                    Play integrity: Na ten moment pozostaje moduł Magiska/Ksu <a href="https://github.com/chiteroman/PlayIntegrityFix/releases" target="_blank">Play integrity fix</a>. Jeśli nie działa to trzeba szukać czy Developer od dystrybucji custom roma którego używasz nie podał innego rozwiązania problemu z play integrity.
+                </p>
+            </article>
+        </section>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+    </main>
+
+    <footer>
+        <!-- Coś tu się może kiedyś wrzuci :P -->
+    </footer>
+
+</body>
+</html>
